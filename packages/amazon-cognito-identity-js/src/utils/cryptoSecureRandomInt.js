@@ -1,26 +1,3 @@
-var crypto;
-
-// Native crypto from window (Browser)
-if (typeof window !== 'undefined' && window.crypto) {
-	crypto = window.crypto;
-}
-
-// Native (experimental IE 11) crypto from window (Browser)
-if (!crypto && typeof window !== 'undefined' && window.msCrypto) {
-	crypto = window.msCrypto;
-}
-
-// Native crypto from global (NodeJS)
-if (!crypto && typeof global !== 'undefined' && global.crypto) {
-	crypto = global.crypto;
-}
-
-// Native crypto import via require (NodeJS)
-if (!crypto && typeof require === 'function') {
-	try {
-		crypto = require('crypto');
-	} catch (err) {}
-}
 
 /*
  * Cryptographically secure pseudorandom number generator
